@@ -45,11 +45,11 @@ class _HomePageState extends State<HomePage> {
                   itemBuilder: (_, index) {
                     var imageUrl = snapshot.data[index].downloadUrl;
                     return GestureDetector(
-                      onTap: () {
+                      onTap: ()  {
                         _downloadStarted();
                         _bloc.downloadImage(_dio, imageUrl).then(
-                            (Response response) => response.statusCode == 200
-                                ? _downloadComplete()
+                            (Response response) async => response.statusCode == 200
+                                ? await _bloc.showDownloadNotification()
                                 : null);
                       },
                       child: CachedNetworkImage(
@@ -79,15 +79,6 @@ class _HomePageState extends State<HomePage> {
       SnackBar(
         duration: Duration(seconds: 2),
         content: Text(AutoSlideString.download_started),
-      ),
-    );
-  }
-
-  void _downloadComplete() {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        duration: Duration(seconds: 2),
-        content: Text(AutoSlideString.download_successful),
       ),
     );
   }
