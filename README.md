@@ -14,19 +14,19 @@ A Flutter application that shows sliding images loaded from network, also allows
 ## Project Structure
 **lib**:
 
-       |-- **bloc**      : contains bussiness logic
+       |-- bloc      : contains bussiness logic
 
-       |-- **constants** : contains string contants
+       |-- constants : contains string contants
 
-       |-- **model**     : contains class to represent required data for app
+       |-- model     : contains class to represent required data for app
 
-       |-- **network**   : contains network related stuff
+       |-- network   : contains network related stuff
 
-       |-- **repository**: contains class that isolates data  source from rest of the app
+       |-- repository: contains class that isolates data  source from rest of the app
 
-       |-- **screens**   : contains app screens
+       |-- screens   : contains app screens
 
-       |-- **utils**     : contains helper class
+       |-- utils     : contains helper class
 
 ## Data Flow
 > *server->repository->bloc->ui*
