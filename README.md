@@ -13,23 +13,35 @@ A Flutter application that shows sliding images loaded from network, also allows
 
 ## Project Structure
 **lib**:
+
        |-- **bloc**      : contains bussiness logic
+
        |-- **constants** : contains string contants
+
        |-- **model**     : contains class to represent required data for app
+
        |-- **network**   : contains network related stuff
+
        |-- **repository**: contains class that isolates data  source from rest of the app
+
        |-- **screens**   : contains app screens
+
        |-- **utils**     : contains helper class
 
 ## Data Flow
 > *server->repository->bloc->ui*
 
-Required json data comes from the server. To get that data packages like [dio](https://pub.dev/packages/dio) and [retrofit](https://pub.dev/packages/retrofit) are used. 
-Repository isolates that data from rest of the application.
-Only repository is aware of how and from where data comes in application.  
-All data comes through repository and goes to bloc.
-Bloc contains all the business logic like how data will come from repository, how that data will go to ui part, how to handle user action happened on ui, etc.
-UI part contains app screen that shows data which  comes from bloc. 
+###### Required json data comes from the server. To get that data packages like [dio](https://pub.dev/packages/dio) and [retrofit](https://pub.dev/packages/retrofit) are used. 
+
+###### Repository isolates that data from rest of the application.
+
+###### Only repository is aware of how and from where data comes in application.  
+
+###### All data comes through repository and goes to bloc.
+
+###### Bloc contains all the business logic like how data will come from repository, how that data will go to ui part, how to handle user action happened on ui, etc.
+
+###### UI part contains app screen that shows data which  comes from bloc. 
 
 ## Third Party Packages
 #### [carousel_slider](https://pub.dev/packages/carousel_slider)
